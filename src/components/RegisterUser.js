@@ -1,16 +1,25 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
+import UserContext from "../UserContext";
 
 function RegisterUser() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const user = useContext(UserContext);
+
   const registerNewUser = (e) => {
     e.preventDefault();
 
-    //const data = {email, password}
-    //axios.post(url: "", data)
+    const data = { username, password };
+    axios
+      .post("http://localhost:4000/user/register", data, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        user.setUsername(res.data.username);
+      });
   };
 
   return (
