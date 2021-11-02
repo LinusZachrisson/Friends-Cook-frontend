@@ -1,11 +1,11 @@
 import './App.css';
-import Friends from './components/Friends';
+import Navbar from './components/Navbar';
 
 function App() {
     return (
         <div className='App'>
             Friends & Cook
-            <Friends />
+            <Navbar />
         </div>
     );
 }
