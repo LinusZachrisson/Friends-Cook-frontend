@@ -19,13 +19,15 @@ function RegisterUser() {
       })
       .then((res) => {
         user.setUsername(res.data.username);
+        setUsername("");
+        setPassword("");
       });
   };
 
   return (
     <div>
       <form onSubmit={(e) => registerNewUser(e)}>
-        <h2>Register User</h2>
+        <h2>Registrera användare</h2>
         <input
           type="text"
           placeholder="username"
@@ -40,7 +42,7 @@ function RegisterUser() {
           onChange={(e) => setPassword(e.target.value)}
         />{" "}
         <br />
-        <button type="submit">Register</button>
+        <button type="submit">Registrera</button>
       </form>
     </div>
   );
