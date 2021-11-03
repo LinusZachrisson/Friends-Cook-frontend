@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { BiUserCircle, BiSearch, BiHome, BiGroup } from 'react-icons/bi';
+import Friends from './Friends';
 
 function Navbar() {
     // Tar bort denna styling sen
@@ -40,7 +41,7 @@ function Navbar() {
                 <Route exact path='/'>
                     START
                 </Route>
-                <Route path='/friends'>VÄNNER</Route>
+                <Route path='/friends' component={Friends} />
                 <Route path='/recipes'>SLUMPADE RECEPT</Route>
                 <Route path='/mypage'>MIN SIDA</Route>
                 <Route path='*' component='' />{' '}
