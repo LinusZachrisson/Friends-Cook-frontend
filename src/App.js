@@ -29,23 +29,27 @@ function App() {
     <UserContext.Provider value={{ username: username, setUsername }}>
       <BrowserRouter>
         <div className="App">Friends & Cook</div>
+
         <div>
+          {/* Komponent för inloggade användare */}
           {!!username && (
             <div>
               {" "}
               Du är nu inloggad som {username}{" "}
+              {/* logga ut knapp i komponent för inloggade användare */}
               <button onClick={logOut}>Logga ut</button>
             </div>
           )}
-          {!username && <div>Du är inte inloggad</div>}
+          {!username && <div>Inte inloggad</div>}
         </div>
         <div>
-          <Link to={"/login"}>Login</Link> ||
-          <Link to={"/Register"}>Registrera</Link>
+          <Link to={"/Register"}>Registrera ny användare</Link>
         </div>
         <Switch>
+          <Route exact path="/">
+            <LoginUser />
+          </Route>
           <Route exact path={"/Register"} component={RegisterUser} />
-          <Route exact path={"/Login"} component={LoginUser} />
         </Switch>
       </BrowserRouter>
     </UserContext.Provider>
