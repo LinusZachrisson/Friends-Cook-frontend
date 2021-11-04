@@ -4,20 +4,18 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { BiUserCircle, BiSearch, BiHome, BiGroup } from 'react-icons/bi';
 
 import UserPage from './UserPage';
-
-
+import RandomRecipes from "./RandomRecipes";
 import Friends from './Friends';
 import LikedRecipes from './LikedRecipes';
 
-
 function Navbar() {
-    // Tar bort denna styling sen
-    const style = {
-        display: 'flex',
-        justifyContent: 'center',
-        margin: '20px',
-        fontSize: '25px',
-    };
+  // Tar bort denna styling sen
+  const style = {
+    display: "flex",
+    justifyContent: "center",
+    margin: "20px",
+    fontSize: "25px",
+  };
 
     return (
         <Router>
@@ -46,7 +44,7 @@ function Navbar() {
             <Switch>
                 <Route exact path='/likedrecipes' component={LikedRecipes} />
                 <Route path='/friends' component={Friends} />
-                <Route path='/recipes'>SLUMPADE RECEPT</Route>
+                <Route path='/recipes' component={RandomRecipes} />
                 <Route path='/mypage'><UserPage /*user={currentUser}*//></Route> 
                 <Route path='*' component='' />{' '}
                 {/* Här kan vi lägga till en 404-sida sen */}
