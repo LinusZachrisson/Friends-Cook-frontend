@@ -7,6 +7,7 @@ import UserPage from './UserPage';
 
 
 import Friends from './Friends';
+import LikedRecipes from './LikedRecipes';
 
 
 function Navbar() {
@@ -21,7 +22,7 @@ function Navbar() {
     return (
         <Router>
             <nav style={style}>
-                <Link to='/'>
+                <Link to='/likedrecipes'>
                     <div>
                         <BiHome />
                     </div>
@@ -43,9 +44,7 @@ function Navbar() {
                 </Link>
             </nav>
             <Switch>
-                <Route exact path='/'>
-                    START
-                </Route>
+                <Route exact path='/likedrecipes' component={LikedRecipes} />
                 <Route path='/friends' component={Friends} />
                 <Route path='/recipes'>SLUMPADE RECEPT</Route>
                 <Route path='/mypage'><UserPage /*user={currentUser}*//></Route> 
