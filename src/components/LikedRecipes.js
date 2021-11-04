@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function LikedRecipes(){
 
-    let [likedRecipes, setLikedRecipes] = useState();
+    let [likedRecipes, setLikedRecipes] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:3000/users/getlikedrecipes')
@@ -14,10 +14,10 @@ function LikedRecipes(){
     }, []);
 
     return (
-        <div>Salam
+        <div>
             {likedRecipes.map((recipe) => (
                 <div key={recipe._id} >
-                    {recipe.title}{' '}{recipe.ImgageUrl}{' '}{recipe.LikedBy}
+                    <img src={recipe.ImageUrl} />{' '}{recipe.Title}{' '}{recipe.LikedBy}
                     {/* På liked by loopar man igenom arrayn och tar fram user */}
                 </div>
             ))}
