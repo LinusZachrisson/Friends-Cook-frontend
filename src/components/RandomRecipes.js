@@ -59,12 +59,14 @@ const RandomRecipes = () => {
       <div style={simpleParentStyle}>
         {recipes.map((recipe) => (
           <div key={recipe.Id} style={simpleChildrenStyle}>
-            <img
-              src={recipe.ImageUrl}
-              alt="Bilden kunde inte laddas"
-              style={simpleImgStyle}
-            />
-            <p style={simpleTextStyle}>{recipe.Title}</p>
+            <a href={"https://www.ica.se/recept/" + recipe.Id}>
+              <img
+                src={recipe.ImageUrl}
+                alt="Bilden kunde inte laddas"
+                style={simpleImgStyle}
+              />
+              <p style={simpleTextStyle}>{recipe.Title}</p>
+            </a>
           </div>
         ))}
       </div>
