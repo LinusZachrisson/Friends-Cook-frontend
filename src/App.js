@@ -1,3 +1,4 @@
+
 import "./App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -5,6 +6,7 @@ import RegisterUser from "./components/RegisterUser";
 import UserContext from "./UserContext";
 import axios from "axios";
 import LoginUser from "./components/LoginUser";
+import Navbar from './components/Navbar';
 
 function App() {
   const [username, setUsername] = useState("");
@@ -31,6 +33,7 @@ function App() {
         <div className="App">Friends & Cook</div>
 
         <div>
+          <Navbar/>
           {/* Komponent för inloggade användare */}
           {!!username && (
             <div>
@@ -54,6 +57,7 @@ function App() {
       </BrowserRouter>
     </UserContext.Provider>
   );
+
 }
 
 export default App;
