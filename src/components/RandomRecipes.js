@@ -12,10 +12,29 @@ const RandomRecipes = () => {
     axios
       .get("http://localhost:4000/api/")
       .then((res) => {
+        console.log(res.data.Recipes)
         setRecipes(res.data.Recipes);
       })
       .catch((err) => console.log(err));
   };
+
+  const handleClick = (evt) => {
+    console.log(evt.target.id);
+    console.log(evt.target.imageurl);
+    console.log(evt.target.title);
+    evt.target.textContent = "Gillat!"
+    const resp = fetch("http://localhost:4000/write", {method: "POST",
+        body: JSON.stringify({
+          Id: evt.target.id,
+          Title: evt.target.title,
+          ImageUrl: evt.target.imageurl,
+          LikedBy: "Toni"
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+  }
 
   // START: Tillfällig styling
   const simpleParentStyle = {
@@ -67,6 +86,7 @@ const RandomRecipes = () => {
               />
               <p style={simpleTextStyle}>{recipe.Title}</p>
             </a>
+          <button onClick={handleClick} imageurl={recipe.ImageUrl} title={recipe.Title} id={recipe.Id}>Gilla</button>
           </div>
         ))}
       </div>
