@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const RandomRecipes = () => {
+const RandomRecipes = (prop) => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const RandomRecipes = () => {
           Id: evt.target.id,
           Title: evt.target.title,
           ImageUrl: evt.target.imageurl,
-          LikedBy: "Toni"
+          LikedBy: prop.user
         }),
         headers: {
             'Content-Type': 'application/json'

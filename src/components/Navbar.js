@@ -44,7 +44,9 @@ function Navbar({ user }) {
             <Switch>
                 <Route exact path='/' component={LikedRecipes} />
                 <Route path='/friends' component={Friends} />
-                <Route path='/recipes' component={RandomRecipes} />
+                <Route path='/recipes'>
+                    <RandomRecipes user = {user}/>
+                </Route>s
                 <Route path='/mypage'>
                     <UserPage user={user} />
                 </Route>
