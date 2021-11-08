@@ -17,14 +17,14 @@ function LikedRecipes() {
         e.preventDefault();
         console.log(e.target.id);
 
-        fetch('https://www.ica.se/recept/'  + e.target.id)
+        fetch('https://www.ica.se/recept/'  + e.target.id, {
+            mode: 'no-cors',
+        })
             .then((resp) => resp.json())
             .then((data) => {
                 console.log(data);
             });
     };
-
-    // https://www.ica.se/recept/717330
 
     return (
         <div>
