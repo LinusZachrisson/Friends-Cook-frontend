@@ -7,6 +7,7 @@ function LikedRecipes() {
         fetch('http://localhost:4000/users/getlikedrecipes')
             .then((resp) => resp.json())
             .then((data) => {
+                console.log(data);
                 setLikedRecipes(data);
             });
     }, []);
