@@ -16,9 +16,9 @@ function LikedRecipes() {
         <div>
             {likedRecipes.map((recipe) => (
                 <div key={recipe._id}>
-                    <img src={recipe.ImageUrl} /> {recipe.Title}{' '}
-                    <div>{recipe.LikedBy.length - 1 == 0 ? <div>{recipe.LikedBy[0]} gillar receptet. </div> : <div> {recipe.LikedBy[0]} och {recipe.LikedBy.length - 1} vänner gillar receptet.</div>}  </div>
-                    {/* På liked by loopar man igenom arrayn och tar fram user */}
+                    <img src={recipe.ImageUrl} /> 
+                    <div>{recipe.Title}</div>
+                    <div>{recipe.LikedBy.length - 1 === 0 ? <div>{recipe.LikedBy[0]} gillar receptet. </div> : <div> {recipe.LikedBy[0]} och {recipe.LikedBy.length - 1} vänner till gillar receptet.</div>}  </div>
                 </div>
             ))}
         </div>
