@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-
 function LikedRecipes() {
     let [likedRecipes, setLikedRecipes] = useState([]);
 
@@ -14,17 +13,35 @@ function LikedRecipes() {
     }, []);
 
     return (
-        <div>
+        <div className='flow-container'>
+            <p className='flow-p'>
+                <span>Behöver du middagstips?</span>
+                <br /> Kolla in vad dina vänner gillar för recept.
+            </p>
             {likedRecipes.map((recipe) => (
-                <div key={recipe.Id}>
+                <div key={recipe._id} className='flow-recipe-container'>
                     <a href={'https://www.ica.se/recept/' + recipe.Id}>
                         <img
                             src={recipe.ImageUrl}
-                            alt='Bilden kunde inte laddas'  
+                            alt='Bilden kunde inte laddas'
                         />
-                            <p>{recipe.Title}</p>
-                        </a>
-                    <div>{recipe.LikedBy.length - 1 === 0 ? <div>{recipe.LikedBy[0]} gillar receptet. </div> : <div> {recipe.LikedBy[0]} och {recipe.LikedBy.length - 1} vänner till gillar receptet.</div>}  </div>
+                    </a>
+                    <p className='flow-recipe-title'>{recipe.Title}</p>{' '}
+                    <div className='flow-likedby'>
+                        {recipe.LikedBy.length - 1 === 0 ? (
+                            <p>
+                                Gillas av <span>{recipe.LikedBy[0]}</span>{' '}
+                            </p>
+                        ) : (
+                            <p>
+                                {' '}
+                                <span>{recipe.LikedBy[0]}</span> och{' '}
+                                <span>{recipe.LikedBy.length - 1}</span> vänner
+                                till gillar receptet.
+                            </p>
+                        )}
+                    </div>
+                    {/* <hr /> */}
                 </div>
             ))}
         </div>

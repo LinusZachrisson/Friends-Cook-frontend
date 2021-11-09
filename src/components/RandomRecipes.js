@@ -37,59 +37,33 @@ const RandomRecipes = (prop) => {
         });
     };
 
-    // START: Tillfällig styling
-    const simpleParentStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        flexFlow: 'row wrap',
-        marginTop: '1rem',
-    };
-
-    const simpleChildrenStyle = {
-        height: '7rem',
-        flex: '50%',
-        paddingBottom: '6rem',
-    };
-
-    const simpleNewRecipesStyle = {
-        display: 'inlineBlock',
-        background: 'darkseagreen',
-        color: 'white',
-        borderRadius: '0.3rem',
-        padding: '0.3rem',
-    };
-
-    const simpleImgStyle = {
-        height: '9rem',
-        width: '9rem',
-        borderRadius: '1rem',
-    };
-
-    const simpleTextStyle = {
-        margin: '0',
-    };
-    // END: Tillfällig styling
-
     return (
-        <div>
-            <a href='/recipes' style={simpleNewRecipesStyle}>
+        <div className='random-recipes-container'>
+            <p className='random-first-text'>
+                Här du hitta nya recept att <span>gilla, laga</span>
+                <br /> och <span>inspirera</span> dina vänner med.
+            </p>
+            <a href='/recipes' className='new-recipes-btn'>
                 Slumpa nya recept
             </a>
-            <div style={simpleParentStyle}>
+            <div>
                 {recipes.map((recipe) => (
                     <div
                         key={recipe.Id}
-                        style={simpleChildrenStyle}
                         id={recipe.ImageUrl}
+                        className='random-recipe-box'
                     >
-                        <a href={'https://www.ica.se/recept/' + recipe.Id}>
+                        <a
+                            href={'https://www.ica.se/recept/' + recipe.Id}
+                            className='random-recipe-container'
+                        >
                             <img
                                 src={recipe.ImageUrl}
                                 alt='Bilden kunde inte laddas'
-                                style={simpleImgStyle}
                             />
-                            <p style={simpleTextStyle}>{recipe.Title}</p>
+                            <p className='random-recipe-title'>
+                                {recipe.Title}
+                            </p>
                         </a>
                         <button
                             onClick={handleClick}

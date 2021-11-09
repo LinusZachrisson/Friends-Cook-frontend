@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { BiTrash } from 'react-icons/bi';
 
 const UserPage = (prop) => {
     const [likedRecepies, setLikedRecepies] = useState([]);
-
+    console.log(prop);
     useEffect(() => {
         fetch(`http://localhost:4000/readall`)
             .then((res) => res.json())
@@ -13,29 +14,26 @@ const UserPage = (prop) => {
                         recepies.push(data[i]);
                     }
                 }
+                console.log(recepies);
                 setLikedRecepies(recepies);
             });
     }, []);
 
     return (
-        <div>
-            <h1>{prop.user} </h1>
-
-            <h1>Liked recepies</h1>
-            <ul>
+        <div className='profile-container'>
+            <p>
+                Gillade recept av <span> {prop.user}</span>
+            </p>
+            <div className='profile-liked-rec-container'>
                 {likedRecepies.map((food, index) => {
                     return (
-                        <li key={index}>
-                            {' '}
-                            <h1>{food.Title}</h1>{' '}
+                        <div key={index} className='profile-recipe-con'>
                             <img src={food.ImageUrl} alt='Food of recepie' />{' '}
-                            <p>
-                                Liked by {food.LikedBy}
-                            </p>
-                        </li>
+                            <h4>{food.Title}</h4>
+                        </div>
                     );
                 })}
-            </ul>
+            </div>
         </div>
     );
 };
