@@ -30,7 +30,7 @@ const UserPage = (prop) => {
                             <h1>{food.Title}</h1>{' '}
                             <img src={food.ImageUrl} alt='Food of recepie' />{' '}
                             <p>
-                                Liked by...<button>Unlike</button>
+                                Liked by {food.LikedBy}
                             </p>
                         </li>
                     );

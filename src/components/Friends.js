@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import UserPage from "./UserPage";
 
 function Friends() {
   let [friends, setFriends] = useState();
@@ -20,10 +21,19 @@ function Friends() {
     setFriendProfile(e.target.innerText);
   };
 
+  const GoBack = () =>{
+    setFriendProfile(undefined);
+  }
+
   if (friends === undefined) {
     return <div className="aside-container loading">Loading...</div>;
   } else if (friendProfile) {
-    return <div>{friendProfile}</div>;
+    return (
+      <div>
+        <button onClick={GoBack}>Back</button>
+        <UserPage user={friendProfile}/>
+      </div>
+    );
   } else {
     return (
       <div>
