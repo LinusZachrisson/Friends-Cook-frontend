@@ -30,7 +30,6 @@ const UserPage = (prop) => {
                         <div key={index} className='profile-recipe-con'>
                             <img src={food.ImageUrl} alt='Food of recepie' />{' '}
                             <h4>{food.Title}</h4>
-                            <BiTrash className='remove-icon' />
                         </div>
                     );
                 })}
