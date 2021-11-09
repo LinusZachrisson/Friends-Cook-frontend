@@ -13,30 +13,17 @@ function LikedRecipes() {
             });
     }, []);
 
-    const handleClick = (e) => {
-        e.preventDefault();
-        console.log(e.target.id);
-
-        fetch('https://www.ica.se/recept/'  + e.target.id, {
-            mode: 'no-cors',
-        })
-            .then((resp) => resp.json())
-            .then((data) => {
-                console.log(data);
-            });
-    };
-
     return (
         <div>
             {likedRecipes.map((recipe) => (
                 <div key={recipe.Id}>
-                    <img src={recipe.ImageUrl} /> 
-                    <div
-                    id={recipe.Id} 
-                    onClick={handleClick}
-                    >
-                    {recipe.Title}
-                </div>
+                    <a href={'https://www.ica.se/recept/' + recipe.Id}>
+                        <img
+                            src={recipe.ImageUrl}
+                            alt='Bilden kunde inte laddas'  
+                        />
+                            <p>{recipe.Title}</p>
+                        </a>
                     <div>{recipe.LikedBy.length - 1 === 0 ? <div>{recipe.LikedBy[0]} gillar receptet. </div> : <div> {recipe.LikedBy[0]} och {recipe.LikedBy.length - 1} vänner till gillar receptet.</div>}  </div>
                 </div>
             ))}
