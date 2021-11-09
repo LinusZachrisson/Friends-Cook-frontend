@@ -29,13 +29,15 @@ function LikedRecipes() {
                     <p className='flow-recipe-title'>{recipe.Title}</p>{' '}
                     <div className='flow-likedby'>
                         {recipe.LikedBy.length - 1 === 0 ? (
-                            <p>Gillas av {recipe.LikedBy[0]} </p>
+                            <p>
+                                Gillas av <span>{recipe.LikedBy[0]}</span>{' '}
+                            </p>
                         ) : (
                             <p>
                                 {' '}
-                                {recipe.LikedBy[0]} och{' '}
-                                {recipe.LikedBy.length - 1} vänner till gillar
-                                receptet.
+                                <span>{recipe.LikedBy[0]}</span> och{' '}
+                                <span>{recipe.LikedBy.length - 1}</span> vänner
+                                till gillar receptet.
                             </p>
                         )}
                     </div>
