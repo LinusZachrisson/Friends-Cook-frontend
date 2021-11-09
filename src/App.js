@@ -8,7 +8,7 @@ import LoginUser from './components/LoginUser';
 import Navbar from './components/Navbar';
 
 function App() {
-    const [username, setUsername] = useState('Mathilda');
+    const [username, setUsername] = useState();
     const [newUser, setNewUser] = useState(false);
 
     useEffect(() => {
