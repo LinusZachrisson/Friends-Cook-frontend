@@ -3,12 +3,16 @@
 // font-family: 'Mohave', sans-serif;
 // font-family: 'Poppins', sans-serif;
 // font-family: 'Quicksand', sans-serif;
+// green color: background-color: #93e38c;
 
 body {
-    background-color: black;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    max-width: 700px;
 }
+
+// - - - - - LOGIN PAGE - - - - - //
 h1 {
     text-transform: uppercase;
     color: white;
@@ -61,14 +65,14 @@ h1 {
         padding-left: 3px;
         padding-top: 8px;
         letter-spacing: 1px;
-        text-transform: uppercase;
         outline: 0;
         cursor: pointer;
         color: white;
         font-size: 1rem;
     }
     input::placeholder {
-        color: #ffffff88;
+        color: #ffffff98;
+        text-transform: uppercase;
     }
     input:focus {
         background-color: #ffffff2a;
@@ -89,6 +93,7 @@ h1 {
 
         &:hover {
             background-color: #93e38c8a;
+            transition: 0.2s all linear;
         }
         &:active {
             background-color: #93e38c8a;
@@ -104,6 +109,274 @@ h1 {
         letter-spacing: 0.5px;
         &:hover {
             color: #addcaed7;
+            transition: 0.2s all linear;
+        }
+    }
+}
+
+// - - - - - HEADER - - - - - //
+.header {
+    height: 100px;
+    background-image: url('../img/header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 1px 1px 4px #3b6040ad;
+
+    p {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 18px;
+        color: #434343;
+        letter-spacing: 0.5px;
+        margin-right: 15px;
+    }
+    button {
+        background-color: #93e38c;
+        border: 0;
+        border-radius: 20px;
+        padding: 10px 15px;
+        margin-right: 10px;
+        font-family: 'Quicksand', sans-serif;
+        color: white;
+        text-transform: uppercase;
+        font-size: 13px;
+
+        &:hover {
+            background-color: #93e38c8a;
+            transition: 0.2s all linear;
+        }
+        &:active {
+            background-color: #93e38c8a;
+        }
+    }
+}
+
+// - - - - - FLOW/HOME PAGE - - - - - //
+.flow-container {
+    width: 100%;
+    .flow-recipe-container:last-of-type {
+        margin-bottom: 80px;
+    }
+    .flow-recipe-container {
+        width: 90%;
+        display: flex;
+        flex-flow: column;
+        margin: 30px auto;
+
+        img {
+            border-radius: 15px;
+            box-shadow: 1px 1px 5px #9a9a9a;
+        }
+        .flow-likedby {
+            display: flex;
+
+            p {
+                margin: 0px 0px 5px 10px;
+            }
+        }
+        .flow-recipe-title {
+            margin: 10px;
+            font-size: 17px;
+            font-weight: bolder;
+        }
+    }
+    hr {
+        border: 1px solid rgba(255, 97, 92, 0.454);
+        width: 100%;
+    }
+}
+
+// - - - - - NAVBAR - - - - - //
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+
+    nav {
+        width: 50%;
+        max-width: 200px;
+        background-color: #93e38c;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin: 20px auto;
+        font-size: 28px;
+        border-radius: 30px;
+        box-shadow: 2px 2px 5px #3b6040;
+    }
+    a {
+        color: white;
+        margin: 0 8px;
+        &:hover {
+            color: #4b805f;
+            transition: 0.3s all linear;
+        }
+        &:active {
+            color: #4b805f;
+        }
+    }
+    .active {
+        color: #4b805f;
+    }
+}
+
+// - - - - - FRIENDS - - - - - //
+.friends-container {
+    width: 100%;
+    margin-top: 35px;
+
+    .friend-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+        background-color: rgba(213, 23, 11, 0.8);
+        margin: 10px auto;
+        padding: 10px;
+        padding-left: 20px;
+        border-radius: 15px;
+        color: white;
+        cursor: pointer;
+
+        button {
+            background-color: #ffffff;
+            border: 0;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            font-family: 'Quicksand', sans-serif;
+            color: #436549;
+            text-transform: uppercase;
+            font-size: 12px;
+            cursor: pointer;
+            &:hover {
+                background-color: #ffffff8a;
+            }
+            &:active {
+                background-color: #ffffff8a;
+            }
+        }
+    }
+}
+
+// - - - - - RANDOM RECIPES - - - - - //
+.random-recipes-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 75px;
+
+    .new-recipes-btn {
+        background-color: rgb(235, 214, 174);
+        color: white;
+        text-transform: uppercase;
+        font-size: 13px;
+        padding: 10px;
+        margin-left: 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        border: 1px solid #fff;
+
+        &:hover {
+            transition: 0.1s all linear;
+            background-color: rgba(235, 214, 174, 0.55);
+        }
+    }
+    .random-recipe-container {
+        width: 90%;
+        display: flex;
+        flex-flow: column;
+        margin: 30px auto;
+        text-decoration: none;
+
+        img {
+            border-radius: 15px;
+            box-shadow: 1px 1px 5px #9a9a9a;
+        }
+        .random-recipe-title {
+            width: 75%;
+            margin: 10px;
+            margin-top: 15px;
+            font-size: 17px;
+            font-weight: bolder;
+            color: black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .random-recipe-box {
+        position: relative;
+    }
+    button {
+        position: absolute;
+        right: 30px;
+        bottom: -6px;
+        background-color: rgba(213, 23, 11, 0.8);
+        margin: 10px auto;
+        font-family: 'Quicksand', sans-serif;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 7px 15px;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(213, 25, 11, 0.434);
+            transition: 0.2s all linear;
+        }
+        &:active {
+            background-color: rgba(213, 25, 11, 0.404);
+        }
+    }
+}
+
+.profile-container {
+    width: 100%;
+
+    h3 {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 30px;
+    }
+
+    .profile-liked-rec-container {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: wrap;
+        margin-bottom: 75px;
+
+        .profile-recipe-con {
+            width: 46%;
+            position: relative;
+            margin: 10px;
+            img {
+                width: 100%;
+                border-radius: 15px;
+            }
+            h4 {
+                width: 70%;
+                font-size: 13px;
+                font-weight: lighter;
+                margin: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .remove-icon {
+                position: absolute;
+                right: 5px;
+                bottom: 6px;
+                cursor: pointer;
+            }
         }
     }
 }

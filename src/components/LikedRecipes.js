@@ -13,12 +13,17 @@ function LikedRecipes() {
     }, []);
 
     return (
-        <div>
+        <div className='flow-container'>
             {likedRecipes.map((recipe) => (
-                <div key={recipe._id}>
-                    <img src={recipe.ImageUrl} /> {recipe.Title}{' '}
-                    {recipe.LikedBy}
-                    {/* På liked by loopar man igenom arrayn och tar fram user */}
+                <div key={recipe._id} className='flow-recipe-container'>
+                    <img src={recipe.ImageUrl} />
+                    <p className='flow-recipe-title'>{recipe.Title}</p>{' '}
+                    <div className='flow-likedby'>
+                        <p>Gillas av</p>
+                        <p>{recipe.LikedBy} </p>{' '}
+                        {/* På liked by loopar man igenom arrayn och tar fram user */}
+                    </div>
+                    <hr />
                 </div>
             ))}
         </div>

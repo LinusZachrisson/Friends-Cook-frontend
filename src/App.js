@@ -28,16 +28,18 @@ function App() {
                 {},
                 { withCredentials: true }
             )
-            .then(() => setUsername());
+            .then(() => {
+                setUsername();
+            });
     };
 
     return (
         <UserContext.Provider value={{ username: username, setUsername }}>
             {username !== undefined ? (
                 <div>
-                    <div>
+                    <div className='header'>
                         {' '}
-                        Du är nu inloggad som {username}{' '}
+                        <p>{username}</p>{' '}
                         {/* logga ut knapp i komponent för inloggade användare */}
                         <button onClick={logOut}>Logga ut</button>
                     </div>
