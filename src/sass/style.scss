@@ -158,9 +158,7 @@ h1 {
 // - - - - - FLOW/HOME PAGE - - - - - //
 .flow-container {
     width: 100%;
-    .flow-recipe-container:last-of-type {
-        margin-bottom: 80px;
-    }
+
     .flow-recipe-container {
         width: 90%;
         display: flex;
@@ -168,6 +166,7 @@ h1 {
         margin: 30px auto;
 
         img {
+            width: 100%;
             border-radius: 15px;
             box-shadow: 1px 1px 5px #9a9a9a;
         }
@@ -244,8 +243,11 @@ h1 {
         padding-left: 20px;
         border-radius: 15px;
         color: white;
-        cursor: pointer;
 
+        .friend-con-name {
+            cursor: pointer;
+            width: 70%;
+        }
         button {
             background-color: #ffffff;
             border: 0;
@@ -263,6 +265,26 @@ h1 {
             &:active {
                 background-color: #ffffff8a;
             }
+        }
+    }
+
+    button {
+        background-color: rgba(213, 23, 11, 0.8);
+        font-family: 'Quicksand', sans-serif;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 7px 15px;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        margin-left: 25px;
+        &:hover {
+            background-color: rgba(213, 25, 11, 0.434);
+            transition: 0.2s all linear;
+        }
+        &:active {
+            background-color: rgba(213, 25, 11, 0.404);
         }
     }
 }
@@ -339,6 +361,7 @@ h1 {
     }
 }
 
+// - - - - - PROFILE - - - - - //
 .profile-container {
     width: 100%;
 

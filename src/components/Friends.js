@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import UserPage from './UserPage';
 
 function Friends() {
     let [friends, setFriends] = useState();
@@ -20,22 +21,34 @@ function Friends() {
         setFriendProfile(e.target.innerText);
     };
 
+    const GoBack = () => {
+        setFriendProfile(undefined);
+    };
+
     if (friends === undefined) {
         return <div className='aside-container loading'>Loading...</div>;
     } else if (friendProfile) {
-        return <div>{friendProfile}</div>;
+        return (
+            <div className='friends-container'>
+                <button onClick={GoBack}>Back</button>
+                <UserPage user={friendProfile} />
+            </div>
+        );
     } else {
         return (
             <div className='friends-container'>
                 {friends.map((friend) => (
-                    <div
-                        key={friend._id}
-                        onClick={onClick}
-                        className='friend-container'
-                    >
-                        {friend.username}{' '}
-                        {/* Här kan vi köra componenten för en användares profil och skicka med friendProfile-statet */}
-                        <button>Avfölj</button>
+                    <div className='friend-container'>
+                        <div
+                            key={friend._id}
+                            onClick={onClick}
+                            className='friend-con-name'
+                        >
+                            {friend.username}
+                        </div>
+                        <div>
+                            <button>Avfölj</button>
+                        </div>
                     </div>
                 ))}
             </div>

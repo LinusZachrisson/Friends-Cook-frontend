@@ -3,7 +3,7 @@ import { BiTrash } from 'react-icons/bi';
 
 const UserPage = (prop) => {
     const [likedRecepies, setLikedRecepies] = useState([]);
-
+    console.log(prop);
     useEffect(() => {
         fetch(`http://localhost:4000/readall`)
             .then((res) => res.json())
@@ -14,13 +14,14 @@ const UserPage = (prop) => {
                         recepies.push(data[i]);
                     }
                 }
+                console.log(recepies);
                 setLikedRecepies(recepies);
             });
     }, []);
 
     return (
         <div className='profile-container'>
-            <h3>Mina gillade recept</h3>
+            <h3>{prop.user} - Gillade recept</h3>
             <div className='profile-liked-rec-container'>
                 {likedRecepies.map((food, index) => {
                     return (
