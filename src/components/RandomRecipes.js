@@ -39,6 +39,10 @@ const RandomRecipes = (prop) => {
 
     return (
         <div className='random-recipes-container'>
+            <p className='random-first-text'>
+                Här du hitta nya recept att <span>gilla, laga</span>
+                <br /> och <span>inspirera</span> dina vänner med.
+            </p>
             <a href='/recipes' className='new-recipes-btn'>
                 Slumpa nya recept
             </a>

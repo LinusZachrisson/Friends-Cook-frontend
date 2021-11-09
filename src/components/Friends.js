@@ -37,6 +37,7 @@ function Friends() {
     } else {
         return (
             <div className='friends-container'>
+                <h3>Dina vänner</h3>
                 {friends.map((friend) => (
                     <div className='friend-container'>
                         <div

@@ -21,7 +21,9 @@ const UserPage = (prop) => {
 
     return (
         <div className='profile-container'>
-            <h3>{prop.user} - Gillade recept</h3>
+            <p>
+                Gillade recept av <span> {prop.user}</span>
+            </p>
             <div className='profile-liked-rec-container'>
                 {likedRecepies.map((food, index) => {
                     return (

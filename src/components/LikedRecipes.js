@@ -14,6 +14,10 @@ function LikedRecipes() {
 
     return (
         <div className='flow-container'>
+            <p className='flow-p'>
+                <span>Behöver du middagstips?</span>
+                <br /> Kolla in vad dina vänner gillar för recept.
+            </p>
             {likedRecipes.map((recipe) => (
                 <div key={recipe._id} className='flow-recipe-container'>
                     <a href={'https://www.ica.se/recept/' + recipe.Id}>
@@ -35,7 +39,7 @@ function LikedRecipes() {
                             </p>
                         )}
                     </div>
-                    <hr />
+                    {/* <hr /> */}
                 </div>
             ))}
         </div>

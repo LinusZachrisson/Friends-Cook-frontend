@@ -39,7 +39,9 @@ function App() {
                 <div>
                     <div className='header'>
                         {' '}
-                        <p>{username}</p>{' '}
+                        <p>
+                            Hej, <span>{username}</span>
+                        </p>{' '}
                         {/* logga ut knapp i komponent för inloggade användare */}
                         <button onClick={logOut}>Logga ut</button>
                     </div>
