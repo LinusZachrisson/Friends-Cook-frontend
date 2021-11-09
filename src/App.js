@@ -8,7 +8,7 @@ import LoginUser from './components/LoginUser';
 import Navbar from './components/Navbar';
 
 function App() {
-    const [username, setUsername] = useState();
+    const [username, setUsername] = useState('Mathilda');
     const [newUser, setNewUser] = useState(false);
 
     useEffect(() => {
@@ -38,12 +38,11 @@ function App() {
             {username !== undefined ? (
                 <div>
                     <div className='header'>
-                        {' '}
+                        <button onClick={logOut}>Logga ut</button>{' '}
                         <p>
                             Hej, <span>{username}</span>
                         </p>{' '}
                         {/* logga ut knapp i komponent för inloggade användare */}
-                        <button onClick={logOut}>Logga ut</button>
                     </div>
                     <Navbar user={username} />
                 </div>
