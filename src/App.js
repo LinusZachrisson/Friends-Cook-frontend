@@ -1,4 +1,4 @@
-import './App.css';
+import './css/style.css';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import RegisterUser from './components/RegisterUser';
@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 
 function App() {
     const [username, setUsername] = useState();
+    const [newUser, setNewUser] = useState(false);
 
     useEffect(() => {
         axios
@@ -44,20 +45,38 @@ function App() {
                 </div>
             ) : (
                 <BrowserRouter>
-                    <div className='App'>Friends & Cook</div>
-                    <div>
-                        <Link to={'/Register'}>Registrera ny användare</Link>
+                    <div className='startpage-container'>
+                        <h1>Friends&Cook</h1>
+
+                        <Switch>
+                            <Route exact path='/'>
+                                <LoginUser />
+                            </Route>
+                            <Route
+                                exact
+                                path={'/Register'}
+                                component={RegisterUser}
+                                onClick={() => setNewUser(!newUser)}
+                            />
+                        </Switch>
+                        <div className='new-user'>
+                            {!newUser ? (
+                                <Link
+                                    to={'/Register'}
+                                    onClick={() => setNewUser(!newUser)}
+                                >
+                                    Registrera ny användare
+                                </Link>
+                            ) : (
+                                <Link
+                                    to={'/'}
+                                    onClick={() => setNewUser(!newUser)}
+                                >
+                                    Har du redan konto? Logga in
+                                </Link>
+                            )}
+                        </div>
                     </div>
-                    <Switch>
-                        <Route exact path='/'>
-                            <LoginUser />
-                        </Route>
-                        <Route
-                            exact
-                            path={'/Register'}
-                            component={RegisterUser}
-                        />
-                    </Switch>
                 </BrowserRouter>
             )}
         </UserContext.Provider>
