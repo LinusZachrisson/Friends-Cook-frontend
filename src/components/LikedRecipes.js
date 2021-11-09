@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 function LikedRecipes() {
     let [likedRecipes, setLikedRecipes] = useState([]);
 
@@ -15,10 +16,15 @@ function LikedRecipes() {
     return (
         <div>
             {likedRecipes.map((recipe) => (
-                <div key={recipe._id}>
-                    <img src={recipe.ImageUrl} /> {recipe.Title}{' '}
-                    {recipe.LikedBy}
-                    {/* På liked by loopar man igenom arrayn och tar fram user */}
+                <div key={recipe.Id}>
+                    <a href={'https://www.ica.se/recept/' + recipe.Id}>
+                        <img
+                            src={recipe.ImageUrl}
+                            alt='Bilden kunde inte laddas'  
+                        />
+                            <p>{recipe.Title}</p>
+                        </a>
+                    <div>{recipe.LikedBy.length - 1 === 0 ? <div>{recipe.LikedBy[0]} gillar receptet. </div> : <div> {recipe.LikedBy[0]} och {recipe.LikedBy.length - 1} vänner till gillar receptet.</div>}  </div>
                 </div>
             ))}
         </div>
