@@ -45,8 +45,16 @@ const UserPage = (prop) => {
             <div className='profile-liked-rec-container'>
                 {likedRecepies.map((food, index) => {
                     return (
-                        <div id={food.ImageUrl} key={index} className='profile-recipe-con'>
-                            <img src={food.ImageUrl} alt='Food of recepie' />{' '}
+
+                        <div key={index} className='profile-recipe-con'>
+                            <a href={"https://www.ica.se/recept/" + food.Id} target="_blank">
+                            <img src={food.ImageUrl} alt='Food of recepie' />
+                            </a>
+                            {' '}
+                            {/* <a href={"https://www.ica.se/recept/" + food.Id}>
+                                <img src={food.ImageUrl} alt="Bilden kunde inte laddas" />
+                            </a> */}
+
                             <h4>{food.Title}</h4>
                             <p>{food.LikedBy}</p>
                             {food.LikedBy.includes(prop.myLikes) ? 
