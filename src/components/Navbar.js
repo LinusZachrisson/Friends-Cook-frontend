@@ -36,14 +36,18 @@ function Navbar({ user }) {
                 </nav>
             </div>
             <Switch>
-                <Route exact path='/' component={LikedRecipes} />
-                <Route path='/friends' component={Friends} />
+                <Route exact path='/'>
+                    <LikedRecipes myLikes={user}/>
+                </Route>
+                <Route path='/friends'>
+                    <Friends myLikes={user}/>
+                </Route>
                 <Route path='/recipes'>
                     <RandomRecipes user={user} />
                 </Route>
                 s
                 <Route path='/mypage'>
-                    <UserPage user={user} />
+                    <UserPage user={user} myLikes={user}/>
                 </Route>
                 <Route path='*' component='' />{' '}
                 {/* Här kan vi lägga till en 404-sida sen */}

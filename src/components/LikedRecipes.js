@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import UserContext from "../UserContext";
 
-function LikedRecipes() {
+function LikedRecipes(prop) {
   let [likedRecipes, setLikedRecipes] = useState([]);
 
   const user = useContext(UserContext);
@@ -15,12 +15,17 @@ function LikedRecipes() {
       });
   }, []);
 
-  const handleClick = (evt) => {
+  const handleOnClick = (isRemove, evt) => {
+    
     console.log(evt.target.id);
     console.log(evt.target.parentNode.id);
     console.log(evt.target.title);
     console.log(user.username);
-    evt.target.textContent = "Gillat!";
+    if(isRemove){
+      evt.target.textContent = "Borttaget!";
+    }else{
+      evt.target.textContent = "Gillat!";  
+    }
     const resp = fetch("http://localhost:4000/write", {
       method: "POST",
       body: JSON.stringify({
@@ -28,12 +33,15 @@ function LikedRecipes() {
         Title: evt.target.title,
         ImageUrl: evt.target.parentNode.id,
         LikedBy: user.username,
+        Remove: isRemove,
       }),
       headers: {
         "Content-Type": "application/json",
       },
     });
+
   };
+
 
   return (
     <div className="flow-container">
@@ -68,15 +76,10 @@ function LikedRecipes() {
                 </p>
               )}
             </div>
-            <button
-              onClick={handleClick}
-              title={recipe.Title}
-              id={recipe.Id}
-              imageurl={recipe.ImageUrl}
-            >
-              Gilla
-            </button>
-            {/* <hr /> */}
+            {recipe.LikedBy.includes(prop.myLikes) ? 
+              <button title={recipe.Title} id={recipe.Id} imageurl={recipe.ImageUrl} onClick={(evt) => handleOnClick(true, evt)}>Ogilla</button> : 
+              <button title={recipe.Title} id={recipe.Id} imageurl={recipe.ImageUrl} onClick={(evt) => handleOnClick(false, evt)}> Gilla </button>
+            }
           </div>
         ))}
     </div>

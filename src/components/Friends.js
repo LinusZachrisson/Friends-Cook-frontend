@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UserPage from './UserPage';
 
-function Friends() {
+function Friends(prop) {
     let [friends, setFriends] = useState();
     let [friendProfile, setFriendProfile] = useState();
 
@@ -31,7 +31,7 @@ function Friends() {
         return (
             <div className='friends-container'>
                 <button onClick={GoBack}>Back</button>
-                <UserPage user={friendProfile} />
+                <UserPage user={friendProfile} myLikes={prop.myLikes}/>
             </div>
         );
     } else {
