@@ -50,7 +50,7 @@ function LikedRecipes() {
             className="flow-recipe-container"
             id={recipe.ImageUrl}
           >
-            <a href={"https://www.ica.se/recept/" + recipe.Id}>
+            <a href={"https://www.ica.se/recept/" + recipe.Id} target="_blank">
               <img src={recipe.ImageUrl} alt="Bilden kunde inte laddas" />
             </a>
             <p className="flow-recipe-title">{recipe.Title}</p>{" "}
