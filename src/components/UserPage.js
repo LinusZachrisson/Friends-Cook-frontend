@@ -28,7 +28,13 @@ const UserPage = (prop) => {
                 {likedRecepies.map((food, index) => {
                     return (
                         <div key={index} className='profile-recipe-con'>
-                            <img src={food.ImageUrl} alt='Food of recepie' />{' '}
+                            <a href={"https://www.ica.se/recept/" + food.Id} target="_blank">
+                            <img src={food.ImageUrl} alt='Food of recepie' />
+                            </a>
+                            {' '}
+                            {/* <a href={"https://www.ica.se/recept/" + food.Id}>
+                                <img src={food.ImageUrl} alt="Bilden kunde inte laddas" />
+                            </a> */}
                             <h4>{food.Title}</h4>
                         </div>
                     );
