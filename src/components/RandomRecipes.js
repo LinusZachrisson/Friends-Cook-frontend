@@ -43,7 +43,7 @@ const RandomRecipes = (prop) => {
         Här du hitta nya recept att <span>gilla, laga</span>
         <br /> och <span>inspirera</span> dina vänner med.
       </p>
-      <a href="/recipes" className="new-recipes-btn">
+      <a onClick={fetchRecipes} className="new-recipes-btn">
         Slumpa nya recept
       </a>
       <div>
