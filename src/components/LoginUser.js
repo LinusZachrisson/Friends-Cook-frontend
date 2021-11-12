@@ -32,7 +32,6 @@ function LoginUser() {
     return (
         <div>
             <form onSubmit={(e) => logInExistingUser(e)}>
-                {/* <h2>Logga in</h2> */}
                 {wrongLogin && (
                     <div className='login-error'>
                         Fel användarnamn eller lösenord. <br />

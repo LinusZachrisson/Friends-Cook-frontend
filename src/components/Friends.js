@@ -10,14 +10,12 @@ function Friends(prop) {
         fetch('http://localhost:4000/users/getusers')
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data);
                 setFriends(data);
             });
     }, []);
 
     // Fånga användarnamnet som klickats på
     const onClick = (e) => {
-        console.log(e.target.innerText);
         setFriendProfile(e.target.innerText);
     };
 
@@ -31,7 +29,7 @@ function Friends(prop) {
         return (
             <div className='friends-container'>
                 <button onClick={GoBack}>Back</button>
-                <UserPage user={friendProfile} myLikes={prop.myLikes}/>
+                <UserPage user={friendProfile} myLikes={prop.myLikes} />
             </div>
         );
     } else {
