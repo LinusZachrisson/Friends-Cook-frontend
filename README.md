@@ -1,6 +1,6 @@
 # Friends & Cook!
 
-A very social cooking app, where one can (eventually - yet to be implemented!) add friends, and like recipes that are randomized from an API. These recipes can then be liked by any user, and if so, prominently display on the front pages of all their friends. Friends & Cook - say goodbye to wondering what's for diner!
+A very social cooking app, where one can (eventually - yet to be implemented!) add friends, and like recipes that are randomized from an API. These recipes can then be liked by any user, and if so, prominently display on the front pages of all their friends. Friends & Cook - say goodbye to wondering what's for dinner!
 
 Live demo at [INSERT LINK] and backend (built in node.js via express-generator) at https://github.com/ToniHalmetoja/friends-and-cook-backend )
 
