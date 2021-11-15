@@ -14,7 +14,7 @@ function RegisterUser() {
 
         const data = { username, password };
         axios
-            .post('http://localhost:4000/user/register', data, {
+            .post('https://cook-and-friends.herokuapp.com/user/register', data, {
                 withCredentials: true,
             })
             .then((res) => {

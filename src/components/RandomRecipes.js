@@ -11,7 +11,7 @@ const RandomRecipes = (prop) => {
 
     const fetchRecipes = () => {
         axios
-            .get('http://localhost:4000/api/')
+            .get('https://cook-and-friends.herokuapp.com/api/')
             .then((res) => {
                 setRecipes(res.data.Recipes);
             })
@@ -20,7 +20,7 @@ const RandomRecipes = (prop) => {
 
     const handleClick = (evt) => {
         evt.target.textContent = 'Gillat!';
-        const resp = fetch('http://localhost:4000/write', {
+        const resp = fetch('https://cook-and-friends.herokuapp.com/write', {
             method: 'POST',
             body: JSON.stringify({
                 Id: evt.target.id,

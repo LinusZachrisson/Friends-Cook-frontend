@@ -4,7 +4,7 @@ const UserPage = (prop) => {
     const [likedRecepies, setLikedRecepies] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/readall`)
+        fetch(`https://cook-and-friends.herokuapp.com/readall`)
             .then((res) => res.json())
             .then((data) => {
                 let recepies = [];
@@ -18,7 +18,7 @@ const UserPage = (prop) => {
     }, [likedRecepies]);
 
     const handleOnClick = (isRemoved, evt) => {
-        const resp = fetch('http://localhost:4000/write', {
+        const resp = fetch('https://cook-and-friends.herokuapp.com/write', {
             method: 'POST',
             body: JSON.stringify({
                 Id: evt.target.id,

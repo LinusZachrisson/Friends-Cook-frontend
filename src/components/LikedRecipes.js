@@ -7,7 +7,7 @@ function LikedRecipes(prop) {
     const user = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:4000/users/getlikedrecipes')
+        fetch('https://cook-and-friends.herokuapp.com/users/getlikedrecipes')
             .then((resp) => resp.json())
             .then((data) => {
                 setLikedRecipes(data);
@@ -20,7 +20,7 @@ function LikedRecipes(prop) {
         } else {
             evt.target.textContent = 'Gillat!';
         }
-        const resp = fetch('http://localhost:4000/write', {
+        const resp = fetch('https://cook-and-friends.herokuapp.com/write', {
             method: 'POST',
             body: JSON.stringify({
                 Id: evt.target.id,

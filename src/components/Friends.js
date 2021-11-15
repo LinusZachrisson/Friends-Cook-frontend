@@ -7,7 +7,7 @@ function Friends(prop) {
 
     // Hämta användare
     useEffect(() => {
-        fetch('http://localhost:4000/users/getusers')
+        fetch('https://cook-and-friends.herokuapp.com/users/getusers')
             .then((resp) => resp.json())
             .then((data) => {
                 setFriends(data);
