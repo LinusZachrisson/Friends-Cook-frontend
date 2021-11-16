@@ -19,7 +19,7 @@ function App() {
 
     useEffect(() => {
         axios
-            .get('https://cook-and-friends.herokuapp.com/user/islogedin', {
+            .get('http://localhost:4000/user/islogedin', {
                 withCredentials: true,
             })
             .then((res) => {
@@ -30,7 +30,7 @@ function App() {
     const logOut = () => {
         axios
             .post(
-                'https://cook-and-friends.herokuapp.com/user/logout',
+                'http://localhost:4000/user/logout',
                 {},
                 { withCredentials: true }
             )

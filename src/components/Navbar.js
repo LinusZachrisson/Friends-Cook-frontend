@@ -1,6 +1,11 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+    BrowserRouter as HashRouter,
+    Router,
+    Switch,
+    Route,
+} from 'react-router-dom';
 import { BiUserCircle, BiSearch, BiHome, BiGroup } from 'react-icons/bi';
 
 import UserPage from './UserPage';
@@ -10,7 +15,7 @@ import LikedRecipes from './LikedRecipes';
 
 function Navbar({ user }) {
     return (
-        <Router>
+        <HashRouter basename='/'>
             <div className='navbar'>
                 <nav>
                     <NavLink exact activeClassName='active' to='/'>
@@ -37,22 +42,22 @@ function Navbar({ user }) {
             </div>
             <Switch>
                 <Route exact path='/'>
-                    <LikedRecipes myLikes={user}/>
+                    <LikedRecipes myLikes={user} />
                 </Route>
                 <Route path='/friends'>
-                    <Friends myLikes={user}/>
+                    <Friends myLikes={user} />
                 </Route>
                 <Route path='/recipes'>
                     <RandomRecipes user={user} />
                 </Route>
                 s
                 <Route path='/mypage'>
-                    <UserPage user={user} myLikes={user}/>
+                    <UserPage user={user} myLikes={user} />
                 </Route>
                 <Route path='*' component='' />{' '}
                 {/* Här kan vi lägga till en 404-sida sen */}
             </Switch>
-        </Router>
+        </HashRouter>
     );
 }
 
