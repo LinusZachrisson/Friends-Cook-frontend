@@ -52,7 +52,7 @@ function App() {
                         <h1>Friends&Cook</h1>
 
                         <Switch>
-                            <Route exact path='/'>
+                            <Route exact path='/build/index.html'>
                                 <LoginUser />
                             </Route>
                             <Route
