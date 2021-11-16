@@ -10,6 +10,7 @@ function LikedRecipes(prop) {
         fetch('https://cook-and-friends.herokuapp.com/users/getlikedrecipes')
             .then((resp) => resp.json())
             .then((data) => {
+                console.log(data);
                 setLikedRecipes(data);
             });
     }, []);

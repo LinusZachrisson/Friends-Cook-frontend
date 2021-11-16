@@ -1,11 +1,6 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import {
-    BrowserRouter as HashRouter,
-    Router,
-    Switch,
-    Route,
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import { BiUserCircle, BiSearch, BiHome, BiGroup } from 'react-icons/bi';
 
 import UserPage from './UserPage';
@@ -18,7 +13,7 @@ function Navbar({ user }) {
         <HashRouter basename='/'>
             <div className='navbar'>
                 <nav>
-                    <NavLink exact activeClassName='active' to='/'>
+                    <NavLink exact activeClassName='active' exact to='/'>
                         <div>
                             <BiHome />
                         </div>
