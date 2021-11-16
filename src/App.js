@@ -1,5 +1,11 @@
 import './css/style.css';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import {
+    BrowserRouter,
+    Switch,
+    HashRouter,
+    Route,
+    Link,
+} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import RegisterUser from './components/RegisterUser';
 import UserContext from './UserContext';
@@ -47,12 +53,12 @@ function App() {
                     <Navbar user={username} />
                 </div>
             ) : (
-                <BrowserRouter>
+                <HashRouter basename='/'>
                     <div className='startpage-container'>
                         <h1>Friends&Cook</h1>
 
                         <Switch>
-                            <Route exact path='/build/index.html'>
+                            <Route exact path='/'>
                                 <LoginUser />
                             </Route>
                             <Route
@@ -80,7 +86,7 @@ function App() {
                             )}
                         </div>
                     </div>
-                </BrowserRouter>
+                </HashRouter>
             )}
         </UserContext.Provider>
     );
