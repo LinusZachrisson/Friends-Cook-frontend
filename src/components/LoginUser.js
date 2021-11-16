@@ -15,7 +15,7 @@ function LoginUser() {
 
         const data = { username, password };
         axios
-            .post('http://localhost:4000/user/login', data, {
+            .post('https://cook-and-friends.herokuapp.com/user/login', data, {
                 withCredentials: true,
             })
             .then((res) => {
