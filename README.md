@@ -16,3 +16,13 @@ Live demo at [INSERT LINK] and backend (built in node.js via express-generator) 
 
 5) Enjoy! Currently, users are hardcoded, but recipes can be randomized and liked, and if liked, they are in saved to the database and displayed on the landing page.
 
+# Specifics!
+
+The front end half of this project uses React and Axios, along with some smaller packages for ease of use such as the cors NPM package.
+
+The backend uses Node.js and Express.
+
+The external API used for the recipes is that from ICA, from the URL http://handla.api.ica.se/api/
+
+The database we employ is a simple MongoDB one, hosted on MongoDB Atlas.
+
