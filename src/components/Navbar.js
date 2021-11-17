@@ -10,7 +10,7 @@ import LikedRecipes from './LikedRecipes';
 
 function Navbar({ user }) {
     return (
-        <HashRouter basename='/'>
+        <HashRouter>
             <div className='navbar'>
                 <nav>
                     <NavLink exact activeClassName='active' exact to='/'>
