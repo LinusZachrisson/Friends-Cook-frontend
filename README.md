@@ -4,6 +4,8 @@ A very social cooking app, where one can (eventually - yet to be implemented!) a
 
 Live demo at https://linuszachrisson.github.io/Friends-Cook-frontend/ and backend (built in node.js via express-generator) at https://github.com/ToniHalmetoja/friends-and-cook-backend
 
+##Test-login: username Toni, password 12345##
+
 # To run locally!
 
 1) Clone the repo and subsequently clone the backend. 
